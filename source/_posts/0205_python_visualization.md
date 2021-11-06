@@ -56,7 +56,7 @@ plt.show()    #마무리! 꼭 해주기!
 
 
     
-![](/images/output_1_0.png)
+![](/images/0205/output_1_0.png)
     
 
 
@@ -80,7 +80,7 @@ plt.show()
 
 
     
-![](/images/output_2_0.png)
+![](/images/0205/output_2_0.png)
     
 
 
@@ -171,7 +171,7 @@ plt.show()
 
 
     
-![](/images/output_10_1.png)
+![](/images/0205/output_10_1.png)
     
 <br>
 
@@ -234,7 +234,7 @@ plt.show()
 
 
     
-![](/images/output_14_1.png)
+![](/images/0205/output_14_1.png)
     
 
 
@@ -278,7 +278,7 @@ plt.show()
 
 
     
-![](/images/output_16_1.png)
+![](/images/0205/output_16_1.png)
     
 
 
@@ -306,7 +306,7 @@ fig.show()
 
 
     
-![png](/images/output_18_0.png)
+![png](/images/0205/output_18_0.png)
     
 
 
@@ -330,7 +330,7 @@ fig.show()
 
 
     
-![png](/images/output_19_0.png)
+![png](/images/0205/output_19_0.png)
     
 
 
@@ -359,7 +359,7 @@ fig.show()
 
 
     
-![png](/images/output_22_0.png)
+![png](/images/0205/output_22_0.png)
     
 
 
@@ -384,7 +384,7 @@ fig.show()
 
 
     
-![png](/images/output_25_0.png)
+![png](/images/0205/output_25_0.png)
     
 
 
@@ -412,7 +412,7 @@ fig.show()
 
 
     
-![png](/images/output_27_0.png)
+![png](/images/0205/output_27_0.png)
     
 
 
@@ -435,7 +435,7 @@ plt.show()
 
 
     
-![png](/images/output_30_0.png)
+![png](/images/0205/output_30_0.png)
     
 
 - fig, ax = plt.subplots(ncols=2)
@@ -462,7 +462,7 @@ plt.show()
 
 
     
-![png](/images/output_31_0.png)
+![png](/images/0205/output_31_0.png)
     
 
 
@@ -481,7 +481,7 @@ plt.show()
 
 
     
-![png](/images/output_33_0.png)
+![png](/images/0205/output_33_0.png)
     
 
 
@@ -497,7 +497,7 @@ plt.show()
 
 
     
-![png](/images/output_34_0.png)
+![png](/images/0205/output_34_0.png)
     
 
 
@@ -509,7 +509,7 @@ plt.show()
 
 
     
-![png](/images/output_35_0.png)
+![png](/images/0205/output_35_0.png)
     
 
 
@@ -530,7 +530,7 @@ sns.swarmplot(x = "day", y = "total_bill", data = tips, alpha= .25)
 
 
     
-![png](/images/output_37_1.png)
+![png](/images/0205/output_37_1.png)
     
 
 
@@ -544,7 +544,7 @@ plt.show()
 
 
     
-![png](/images/output_39_0.png)
+![png](/images/0205/output_39_0.png)
     
 
 
@@ -593,7 +593,7 @@ plt.show()
 
 
     
-![png](/images/output_43_0.png)
+![png](/images/0205/output_43_0.png)
     
 
 
@@ -611,7 +611,7 @@ plt.show()
 
 
     
-![png](/images/output_44_0.png)
+![png](/images/0205/output_44_0.png)
     
 
 
@@ -785,7 +785,7 @@ plt.show()
 
 
     
-![png](/images/output_49_0.png)
+![png](/images/0205/output_49_0.png)
     
 
 
@@ -841,7 +841,7 @@ fig.show()
 
 
     
-![png](/images/output_52_0.png)
+![png](/images/0205/output_52_0.png)
     
 
 
@@ -912,7 +912,7 @@ ax = plot_example(ax, zorder=2)
 
 
     
-![png](/images/output_59_0.png)
+![png](/images/0205/output_59_0.png)
     
 
 
@@ -928,7 +928,7 @@ ax.spines["left"].set_visible(False)
 
 
     
-![png](/images/output_60_0.png)
+![png](/images/0205/output_60_0.png)
     
 
 
@@ -948,7 +948,7 @@ ax.yaxis.set_minor_locator(MultipleLocator(0.5))
 
 
     
-![png](/images/output_61_0.png)
+![png](/images/0205/output_61_0.png)
     
 
 
@@ -971,7 +971,7 @@ ax.grid(axis="y", which="minor", ls=":")
 
 
     
-![png](/images/output_62_0.png)
+![png](/images/0205/output_62_0.png)
     
 
 
@@ -999,7 +999,7 @@ ax0 = sns.barplot(x = "day", y = 'total_bill', data = tips,
 
 
     
-![png](/images/output_64_0.png)
+![png](/images/0205/output_64_0.png)
     
 
 
@@ -1045,7 +1045,7 @@ fig.show()
 
 
     
-![png](/images/output_66_0.png)
+![png](/images/0205/output_66_0.png)
     
 
 
@@ -1127,7 +1127,7 @@ plt.show()
 
 
     
-![png](/images/output_67_1.png)
+![png](/images/0205/output_67_1.png)
     
 
 <br>

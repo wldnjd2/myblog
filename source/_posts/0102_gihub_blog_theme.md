@@ -1,5 +1,5 @@
 ---
-title: hexo icarus 테마 설정
+title: hexo icarus 테마 설정(2)
 date: 2021-10-28 13:08:34
 tags: github, hexo
 categories: 
@@ -22,11 +22,11 @@ https://hexo.io/themes/
 > npm install -S hexo-theme-icarus
 > hexo config theme icarus
 
-![](/images/02_01.png)
+![](/images/0102/02_01.png)
 
 _config.yml 파일을 수정해준다
 theme: icarus   <---주석처리하고 추가하면 됨
-![](/images/02_02.png)
+![](/images/0102/02_02.png)
 
 > hexo server 
 
@@ -37,7 +37,7 @@ http://localhost:4000 링크를 통해서 블로그 생성을 확인할 수 있�
 > hexo generate
 > hexo deploy
 
-![](/images/02_03.png)
+![](/images/0102/02_03.png)
 <br>
 
 ## **3. icarus 테마로 블로그 꾸미기**
@@ -54,7 +54,13 @@ _config.icarus.yml
 나는 폴더 이름을 icarus라고 바꿔주고,
 theme의 하위 폴더로 옮겨 주었다
 
-
++)
+최근에 한동안 icarus 테마 변경을 하려고 했으나, 왜인지 수정되지 않는 오류가 있었다
+알고보니 최신 버전 icarus는 theme 설정 폴더가 
+node_modules/hexo-theme-icarus 라는 경로에 위치해 있었다 ㅜㅜ..
+따라서 위의 명령어는 실행 할 필요가 없고
+node_modules/hexo-theme-icarus에서 테마를 수정해주면 된다
+<br>
 
 ## **4. icarus 테마 초기 설정**
 ---

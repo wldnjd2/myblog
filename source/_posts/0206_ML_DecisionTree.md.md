@@ -1,5 +1,5 @@
 ---
-title: 머신러닝 Decision Tree
+title: 머신러닝 Decision Tree(1)
 date: 2021-11-04
 toc : true
 tags: machine learning, decision tree
@@ -171,8 +171,8 @@ plot_tree(clf, filled=True)
 plt.show()
 ```
     
-![](/images/iris1.png)
-![](/images/iris2.png)
+![](/images/0206/iris1.png)
+![](/images/0206/iris2.png)
 
 <br>
 <br>
