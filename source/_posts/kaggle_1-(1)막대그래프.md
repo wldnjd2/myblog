@@ -86,6 +86,7 @@ df = df.iloc[1:, :]
 ```python
 print(df)
 ```
+![](/images/0301_1-1/1.PNG)
 
 ### **1. Demographics & Geographics**
 
@@ -93,6 +94,7 @@ print(df)
 ```python
 print(df['Q1'])
 ```
+![](/images/0301_1-1/2.PNG)
 
 - .value_counts()
 df의 'Q1' 컬럼의 중복된 데이터 값들의 갯수 표시<br>
@@ -118,6 +120,7 @@ age = (
 )
 age.head()
 ```
+![](/images/0301_1-1/3.PNG)
 
 - .round(2)
 반올림 함수
@@ -138,6 +141,7 @@ age dataframe에서 percent라는 이름을 가진 열을 만들어준다.<br>
 age['Percent'] = ((age['Count']/age['Count'].sum())*100).round(2).astype(str) + '%'
 age.head()
 ```
+![](/images/0301_1-1/4.PNG)
 
 
 ```python
@@ -179,6 +183,8 @@ fig = go.Figure( go.Bar(
 
 fig.show()
 ```
+![](/images/0301_1-1/5.PNG)
+
 
 막대기 그래프 위의 결과값 텍스트 출력 설정
 
@@ -192,6 +198,7 @@ fig.update_traces(texttemplate='%{text}',
 fig.show()
 
 ```
+![](/images/0301_1-1/6.PNG)
 
 - showgrid=False<br>
 배경에 (update_xaxes)가로 (update_yaxes)세로 격자 무늬가 사라짐 
@@ -202,6 +209,7 @@ fig.update_xaxes(showgrid=False)
 fig.update_yaxes(showgrid=False)
 fig.show()
 ```
+![](/images/0301_1-1/7.PNG)
 
 - showlegend=False<br>
 범례 추가하지 않음
@@ -231,6 +239,8 @@ fig.update_layout(coloraxis=dict(colorscale='Teal'),
                  font=dict(family="Hiragino Kaku Gothic Pro, sans-serif",size=17, color='#000000'),
                  title_font_size=35)
 ```
+![](/images/0301_1-1/8.PNG)
+
 
 - annotation이란
 주석을 의미함
@@ -257,6 +267,8 @@ fig.add_annotation(dict(font=dict(size=12),
                        ))
 fig.show()
 ```
+![](/images/0301_1-1/9.PNG)
+
 
 전체 코드
 
@@ -332,3 +344,8 @@ fig.add_annotation(dict(font=dict(size=12),
 
 fig.show()
 ```
+![](/images/0301_1-1/10.PNG)
+
+<br>
+<br>
+<br>
