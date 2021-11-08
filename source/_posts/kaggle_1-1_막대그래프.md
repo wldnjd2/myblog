@@ -1,14 +1,16 @@
 ---
-title: Kaggle(1-1) Demographics & Geographics 막대그래프
+title: Kaggle(1-1) 막대그래프(Bar) Demographics & Geographics
 date: 2021-11-07
-tags: kaggle, 
+tags: kaggle
 toc: true
+thumbnail: /images/0301_1-1/10.PNG
 categories: 
 - kaggle
 ---
 
 ### **1. Demographics & Geographics**
-이 노트는 2021년 9월 Kaggle이 실시한 조사에서 얻은 흥미로운 결과를 탐구할 것이다. 
+---
+이 노트는 2021년 9월 Kaggle이 실시한 조사에서 얻은 흥미로운 결과를 담은 보고서입니다.
 25,000명 이상의 데이터 과학자와 Machine Learning 엔지니어가 참여하여 
 그들의 직업에 대한 배경과 경험에 대한 정보를 제공했습니다.
 가독성을 높이기 위해 이 보고서는 다음과 같은 네 섹션으로 나뉩니다.
@@ -17,13 +19,13 @@ categories:
 > 2. 교육 및 직업: Education & Occupation
 > 3. 지식 및 기술: Knowledge & Skills
 > 4. 플랫폼 & 미디어: Platforms & Media
+
+<br>
 <br>
 
-### **1. Demographics & Geographics**
-## Platforms & Media
-
-
+## **1-1. 막대그래프**
 ### **캐글 데이터 불러오기**
+---
 ```python
 # This Python 3 environment comes with many helpful analytics libraries installed
 # It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python
@@ -48,7 +50,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 <br>
 
 ### **라이브러리 임포트 해주기**
-
+---
 ```python
 import pandas as pd 
 import numpy as np
@@ -62,40 +64,42 @@ warnings.filterwarnings('ignore')
 ```
 
 <br>
+<br>
 
-
-- read_csv() <br>
+### **캐글 데이터 불러오기**
+---
+- read_csv()
 외부 text 파일, csv파일을 불러와서 DataFrame (df)으로 저장
+- .iloc
+행 번호 선택 
+- .loc
+label이나 조건표현으로 선택<br>
+- df = df.iloc[1:, :]
+두번째 행부터 마지막행까지 출력, 열은 전체 다 출력
 <br>
-- .iloc 행 번호 선택 
-- .loc label이나 조건표현으로 선택
-- df = df.iloc[1:, :] <br>
-두번째 행부터 마지막행까지 출력
-열은 전체 다 출력
 <br>
-<br>
-
-
 
 ```python
 df = pd.read_csv('../input/kaggle-survey-2021/kaggle_survey_2021_responses.csv')
-df = df.iloc[1:, :]      
-```
-
-
-```python
+df = df.iloc[1:, :]     
 print(df)
 ```
+
 ![](/images/0301_1-1/1.PNG)
 
-### **1. Demographics & Geographics**
+<br>
 
-
+### **Column 값이 Q1인 데이터만 출력**
+---
 ```python
 print(df['Q1'])
 ```
 ![](/images/0301_1-1/2.PNG)
 
+<br>
+
+### **age**
+---
 - .value_counts()
 df의 'Q1' 컬럼의 중복된 데이터 값들의 갯수 표시<br>
 위의 df로 보아 50-54의 갯수를 구해서 출력
@@ -104,9 +108,9 @@ df의 'Q1' 컬럼의 중복된 데이터 값들의 갯수 표시<br>
 - .rename()
 컬럼명을 바꿀 수 있다.
 - .sort_values(by=['Age'])
-컬럼명 Age 값의 데이터를 정렬하기<br>
-ascending=True 오름차순<br>
-ascending=False 내림차순<br>
+컬럼명 Age 값의 데이터를 정렬하기
+ascending=True 오름차순
+ascending=False 내림차순
 
 
 ```python
@@ -120,22 +124,21 @@ age = (
 )
 age.head()
 ```
-![](/images/0301_1-1/3.PNG)
 
+![](/images/0301_1-1/3.PNG)
+<br>
+
+### **Percent column 추가**
+---
 - .round(2)
 반올림 함수
 괄호 안에 숫자2는 소수점 둘째자리까지 나타냄을 의미 (셋째자리에서 반올림)
 - .astype()
 함수의 데이터 타입을 변경해주는 함수이다.
 
-<br>
-<br>
-
-age dataframe에서 percent라는 이름을 가진 열을 만들어준다.<br>
+age dataframe에서 percent라는 이름을 가진 열을 만들어준다.
 그리고 percent 컬럼의 데이터 값은 ((age['Count']/age['Count'].sum())*100) 를 계산한 값에서
 반올림 하고 문자열로 데이터 타입을 바꿔주었다
-
-
 
 ```python
 age['Percent'] = ((age['Count']/age['Count'].sum())*100).round(2).astype(str) + '%'
@@ -143,13 +146,19 @@ age.head()
 ```
 ![](/images/0301_1-1/4.PNG)
 
+<br>
 
-```python
-#age.drop(columns=['percent'],axis=1)
-#위의 코드 두번 싫행해서 열 잘못 들어감
-#df 열삭제 코드
-```
+### **Column 삭제하는법**
+---
 
+age.drop(columns=['percent'],axis=1)
+위의 코드 두번 실행해서 열 잘못 들어감
+df 열삭제 코드
+
+<br>
+
+### **Colors 지정**
+---
 
 ```python
 colors= ['#033351',] * 11
@@ -160,16 +169,19 @@ colors[3] = '#0779c3'
 colors[4] = '#0779c3'
 ```
 
-- fig = go.Figure<br>
-객체 선언<br>
-- go.Bar()<br>
-막대 그래프 그리기<br>
-go는 graph_objects이다 (맨위에 임포트 한것)<br>
+<br>
 
-- cliponaxis = False,<br>
-이건 뭘까? 모르겠다 ㅎㅎ<br>
+### **객체 선언**
+---
 
-- x = age['Age'],y = age['Count'] <br>
+- fig = go.Figure
+객체 선언
+- go.Bar()
+막대 그래프 그리기
+go는 graph_objects이다 (맨위에 임포트 한것)
+- cliponaxis = False
+이건 뭘까? 모르겠다 ㅎㅎ
+- x = age['Age'],y = age['Count'] 
 x축에 Age 데이터 값, y축에 Count 데이터 값 넣어서 그래프로 표현
 
 
@@ -185,9 +197,10 @@ fig.show()
 ```
 ![](/images/0301_1-1/5.PNG)
 
+<br>
 
-막대기 그래프 위의 결과값 텍스트 출력 설정
-
+### **막대기 그래프 위의 결과값 텍스트 출력 설정**
+---
 
 ```python
 fig.update_traces(texttemplate='%{text}',
@@ -200,7 +213,11 @@ fig.show()
 ```
 ![](/images/0301_1-1/6.PNG)
 
-- showgrid=False<br>
+<br>
+
+### **배경 격자무늬 제거**
+---
+- showgrid=False
 배경에 (update_xaxes)가로 (update_yaxes)세로 격자 무늬가 사라짐 
 
 
@@ -211,13 +228,18 @@ fig.show()
 ```
 ![](/images/0301_1-1/7.PNG)
 
-- showlegend=False<br>
+<br>
+
+### **update_layout**
+---
+
+- showlegend=False
 범례 추가하지 않음
-- plot_bgcolor='#F7F7F7'<br>
+- plot_bgcolor='#F7F7F7'
 그래프 배경화면 색상
-- paper_bgcolor='#F7F7F7'<br>
+- paper_bgcolor='#F7F7F7'
 그래프 뒤 배경화면 색상
-- yaxis={'showticklabels':False}<br>
+- yaxis={'showticklabels':False}
 y축에 값을 표기 하지 않음
 - yaxis_title=None
 - xaxis_title=None 
@@ -241,6 +263,10 @@ fig.update_layout(coloraxis=dict(colorscale='Teal'),
 ```
 ![](/images/0301_1-1/8.PNG)
 
+<br>
+
+### **annotation**
+---
 
 - annotation이란
 주석을 의미함
@@ -269,9 +295,12 @@ fig.show()
 ```
 ![](/images/0301_1-1/9.PNG)
 
+<br>
 
-전체 코드
+### **전체 코드**
+---
 
+응답자의 55% 이상이 18세에서 29세 사이이다.
 
 ```python
 age = (
