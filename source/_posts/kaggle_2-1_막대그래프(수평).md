@@ -1,5 +1,5 @@
 ---
-title: Kaggle(2-1) 막대그래프(Bar, 수평) Education & Occupation
+title: Kaggle(2-1) 막대그래프(Bar, 수평)
 date: 2021-11-08
 tags: kaggle, plotly
 toc: true

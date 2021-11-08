@@ -1,5 +1,5 @@
 ---
-title: Kaggle(1-1) 막대그래프(Bar, 수직) Demographics & Geographics
+title: Kaggle(1-1) 막대그래프(Bar, 수직)
 date: 2021-11-07
 tags: kaggle, plotly
 toc: true
@@ -8,18 +8,6 @@ categories:
 - kaggle
 widgets: null
 ---
-
-### **1. Demographics & Geographics**
----
-이 노트는 2021년 9월 Kaggle이 실시한 조사에서 얻은 흥미로운 결과를 담은 보고서입니다.
-25,000명 이상의 데이터 과학자와 Machine Learning 엔지니어가 참여하여 
-그들의 직업에 대한 배경과 경험에 대한 정보를 제공했습니다.
-가독성을 높이기 위해 이 보고서는 다음과 같은 네 섹션으로 나뉩니다.
-
-> 1. 인구통계 및 지리: Demographics & Geographics
-> 2. 교육 및 직업: Education & Occupation
-> 3. 지식 및 기술: Knowledge & Skills
-> 4. 플랫폼 & 미디어: Platforms & Media
 
 <br>
 <br>
