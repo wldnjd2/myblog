@@ -1,11 +1,12 @@
 ---
-title: Kaggle(1-1) 막대그래프(Bar) Demographics & Geographics
+title: Kaggle(1-1) 막대그래프(Bar, 수직) Demographics & Geographics
 date: 2021-11-07
-tags: kaggle
+tags: kaggle, plotly
 toc: true
 thumbnail: /images/0301_1-1/10.PNG
 categories: 
 - kaggle
+widgets: null
 ---
 
 ### **1. Demographics & Geographics**
@@ -60,7 +61,7 @@ import plotly.graph_objects as go
 
 #warning 라이브러리를 이용해서 경고 메세지 숨기기
 import warnings
-warnings.filterwarnings('ignore')      
+warnings.filterwarnings('ignore')     
 ```
 
 <br>
@@ -76,6 +77,8 @@ warnings.filterwarnings('ignore')
 label이나 조건표현으로 선택<br>
 - df = df.iloc[1:, :]
 두번째 행부터 마지막행까지 출력, 열은 전체 다 출력
+
+캐글에서 데이터를 가져와서 df(데이터 프레임)에 넣어준다
 <br>
 <br>
 
@@ -101,8 +104,7 @@ print(df['Q1'])
 ### **age**
 ---
 - .value_counts()
-df의 'Q1' 컬럼의 중복된 데이터 값들의 갯수 표시<br>
-위의 df로 보아 50-54의 갯수를 구해서 출력
+df의 'Q1' 컬럼의 중복된 데이터 값들의 갯수 표시
 - to_frame()
 데이터 프레임으로 변환
 - .rename()
@@ -159,6 +161,7 @@ df 열삭제 코드
 
 ### **Colors 지정**
 ---
+왜 11이여야 할까?...ㅜ
 
 ```python
 colors= ['#033351',] * 11
@@ -176,13 +179,14 @@ colors[4] = '#0779c3'
 
 - fig = go.Figure
 객체 선언
+go를 통해 그래프를 하나하나 설정
 - go.Bar()
 막대 그래프 그리기
 go는 graph_objects이다 (맨위에 임포트 한것)
 - cliponaxis = False
-이건 뭘까? 모르겠다 ㅎㅎ
+텍스트가 짤리는거 보정해주는 코드
 - x = age['Age'],y = age['Count'] 
-x축에 Age 데이터 값, y축에 Count 데이터 값 넣어서 그래프로 표현
+x축에 컬럼 Age의 데이터 값,  y축에 컬럼 Count의 데이터 값 넣어서 그래프로 표현
 
 
 ```python
@@ -199,8 +203,15 @@ fig.show()
 
 <br>
 
-### **막대기 그래프 위의 결과값 텍스트 출력 설정**
+### **update_trace**
 ---
+- texttemplate
+- 
+- textposition
+막대 그래프 밖에 퍼센트 값이 나타나 있다
+- hovertemplate
+마우스 가져다 대면 data 정보를 볼 수 있다
+
 
 ```python
 fig.update_traces(texttemplate='%{text}',
@@ -232,6 +243,9 @@ fig.show()
 
 ### **update_layout**
 ---
+-**update_layout**
+형성된 fig에 레이아웃 업데이트
+<br>
 
 - showlegend=False
 범례 추가하지 않음
@@ -378,3 +392,8 @@ fig.show()
 <br>
 <br>
 <br>
+
+
+Ref
+---
+https://data101.oopy.io/plolty-tutorial-guide-in-korean

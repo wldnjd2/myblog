@@ -1,11 +1,12 @@
 ---
 title: Kaggle(1-3) 산점도 막대그래프(Scatter) Demographics & Geographics
 date: 2021-11-07
-tags: kaggle 
+tags: kaggle, plotly
 toc: true
 thumbnail: images/0303_1-3/10.PNG
 categories: 
 - kaggle
+widgets: null
 ---
 
 ## **1-3. 산점도 막대 그래프**

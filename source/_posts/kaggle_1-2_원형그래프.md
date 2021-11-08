@@ -1,11 +1,12 @@
 ---
 title: Kaggle(1-2) 원형그래프(Pie) Demographics & Geographics
 date: 2021-11-07
-tags: kaggle
+tags: kaggle, plotly
 toc: true
 thumbnail: /images/0302_1-2/6.PNG
 categories: 
 - kaggle
+widgets: null
 ---
 
 ## **1-2. 원형그래프**
@@ -20,7 +21,7 @@ import plotly.graph_objects as go
 
 #warning 라이브러리를 이용해서 경고 메세지 숨기기
 import warnings
-warnings.filterwarnings('ignore')      
+warnings.filterwarnings('ignore')     
 ```
 
 <br>
