@@ -5,7 +5,7 @@ tags: kaggle, plotly
 toc: true
 thumbnail: /images/0401/6.PNG
 categories: 
-- kaggle2
+- kaggle
 widgets: null
 ---
 
