@@ -7,10 +7,10 @@ categories:
 - blog
 - hexo
 ---
-
+   
 ### **post 만들기**
 ---
----
+
 >hexo new temp1234
 
 명령어를 입력하면 temp1234라는 md 파일이 생성
