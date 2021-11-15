@@ -1,6 +1,6 @@
 ---
 title: Kaggle Competition 준비하기(1)
-date: 2021-11-15
+date: 2021-11-14
 tags: kaggle, plotly
 toc: true
 thumbnail: images/mykaggle1/11.PNG
