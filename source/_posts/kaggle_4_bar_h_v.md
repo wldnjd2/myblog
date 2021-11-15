@@ -1,5 +1,5 @@
 ---
-title: Kaggle2 bar v와 h
+title: Kaggle bar v와 h
 date: 2021-11-10
 tags: kaggle, plotly
 toc: true

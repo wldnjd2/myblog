@@ -12,8 +12,7 @@ widgets: null
 ---
 실행환경: kaggle notebook
 사용언어: Python Plotly
-(준비하는 kaggle competition 링크)
-[https://www.kaggle.com/c/kaggle-survey-2021]
+[준비하는 kaggle competition 링크](https://www.kaggle.com/c/kaggle-survey-2021)
 <br>
 
 ```python
@@ -95,12 +94,21 @@ df21['region']=["Korea" if x == 'South Korea'
                         else "World" for x in df21['Q3']]
 df21['region'].value_counts()
 ```
-    World       25615
-    Korea         359
-    Name: region, dtype: int64
 
 <br>
 
+
+```python
+## if 변수 x 가 South Korea 일때
+## else  -> South Korea가 아닐때
+##          x가 0부터 df21['Q3']의 행값을 차례로 World값을 넣는다 
+####        이 결과를 df['region'] 에 넣는다
+##          따라서 동아시아가 아닌 국가들의 행 값은 전부 World로 바뀜
+df21['region']=["Korea" if x == 'South Korea' 
+                        else "World" for x in df21['Q3']]
+df21['region'].head()
+```
+![](/images/mykaggle1/4.PNG)
 ### **데이터 Grouping**
 ---
 윤화님이 정리해주신 데이터~~>.<
@@ -161,20 +169,7 @@ df17['region']=["EastAsia" if x in EastAsia
                             else "World" for x in df17['Country']]
 ```
 
-<br>
 
-
-```python
-## if 변수 x 가 South Korea 일때
-## else  -> South Korea가 아닐때
-##          x가 0부터 df21['Q3']의 행값을 차례로 World값을 넣는다 
-####        이 결과를 df['region'] 에 넣는다
-##          따라서 동아시아가 아닌 국가들의 행 값은 전부 World로 바뀜
-df21['region']=["Korea" if x == 'South Korea' 
-                        else "World" for x in df21['Q3']]
-df21['region'].head()
-```
-![](/images/mykaggle1/4.PNG)
 <br>
 
 ```python
@@ -334,6 +329,8 @@ def pie(df):
 ```
 
 - 메서드 호출
+
+
 ```python
 pie(df21)
 ```
