@@ -120,6 +120,8 @@ df21_DS = df21[df21['Q5'] == 'Data Scientist']
 df21_DS = df21_DS['Q3'].value_counts().to_frame().reset_index().rename(columns={'index':'Country', 'Q3':'Data Scientist'})
 df21_DS
 ```
+![](/images/mykaggle3/1.PNG)
+<br>
 
 
 ```python
@@ -127,27 +129,35 @@ merge = pd.merge(df21_BA, df21_DA)
 job=merge.loc[:,["Business Analyst","Data Analyst"]]
 job.columns.tolist()
 ```
-
+    ['B]usiness Analyst', 'Data Analyst]
+<br>
 
 ```python
 merge
 ```
+![](/images/mykaggle3/2.PNG)
+<br>
 
 
 ```python
 merge.to_numpy().reshape(-1)
 ```
+![](/images/mykaggle3/3.PNG)
+<br>
 
 
 ```python
 merge.columns.tolist()
 #merge.Country.tolist()
 ```
-
+    ['Country', Business Analyst', 'Data Analyst]
+<br>
 
 ```python
 merge.to_numpy()
 ```
+![](/images/mykaggle3/4.PNG)
+<br>
 
 
 ```python
@@ -156,11 +166,15 @@ df21_DE = df21[df21['Q5'] == 'Data Engineer']
 df21_DE = df21_DE['Q3'].value_counts().to_frame().reset_index().rename(columns={'index':'Country', 'Q3':'Data Engineer'})
 df21_DE.head()
 ```
+![](/images/mykaggle3/5.PNG)
+<br>
 
 
 ```python
 merge.iloc[:,[1,2]].to_numpy()
 ```
+![](/images/mykaggle3/6.PNG)
+<br>
 
 
 ```python
@@ -207,6 +221,9 @@ fig['data'][0]['showscale'] = True
 fig.show()
 
 ```
+![](/images/mykaggle3/7.PNG)
+<br>
+
 
 
 ```python
