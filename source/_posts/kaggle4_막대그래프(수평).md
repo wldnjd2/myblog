@@ -1,11 +1,11 @@
 ---
-title: Kaggle(2-1) 막대그래프(Bar, 수평)
+title: 막대그래프(Bar, 수평)
 date: 2021-11-08
 tags: kaggle, plotly
 toc: true
 thumbnail: /images/0304_2-1/9.PNG
 categories: 
-- kaggle
+- kaggle 필사
 widgets: null
 ---
 

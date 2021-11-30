@@ -1,11 +1,11 @@
 ---
-title: Kaggle bar v와 h
+title: Bar 그래프 v와 h
 date: 2021-11-10
 tags: kaggle, plotly
 toc: true
 thumbnail: /images/0401/6.PNG
 categories: 
-- kaggle
+- kaggle 필사
 widgets: null
 ---
 

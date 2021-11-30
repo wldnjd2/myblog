@@ -1,11 +1,11 @@
 ---
-title: Kaggle(3-2) 막대그래프(for문, 수평)
+title: 막대그래프(for문, 수평)
 date: 2021-11-09
 tags: kaggle, plotly
 toc: true
 thumbnail: /images/0306_3-2/4.PNG
 categories: 
-- kaggle
+- kaggle 필사
 widgets: null
 ---
 

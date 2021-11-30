@@ -2,11 +2,22 @@
 title: Kaggle Competition(4)
 date: 2021-11-17
 tags: kaggle, plotly
-toc: true
+
 categories: 
-- my kaggle
-widgets: null
+- kaggle 필사
+toc: true
 ---
+### 그래프 목록
+- 학력
+- 직업
+- 경력
+- 연봉
+- 언어
+
+<br>
+<br>
+<br>
+
 ### **라이브러리 불러오기 & 캐글 데이터 불러오기**
 ---
 
@@ -124,6 +135,7 @@ df21_degree['Q4'].to_numpy()
 ```python
 df21_degree['index'].tolist()
 ```
+
 ![](/images/mykaggle4/4.PNG)
 <br>
 
@@ -138,7 +150,8 @@ fig.update_layout(title_text="<b>21년 World kaggler들의 학력</b>",title_fon
 
 fig.show()
 ```
-![](/images/mykaggle4/5.PNG)
+
+![](/images/mykaggle4/5.png)
 <br>
 
 
@@ -568,6 +581,7 @@ fig.update_layout(title_text="<b>21년 World kaggler들의 연봉</b>",title_fon
 
 fig.show()
 ```
+
 ![](/images/mykaggle4/25.png)
 <br>
 
@@ -632,7 +646,7 @@ fig = go.Figure(data=[
 fig.update_layout(title_text="<b>21년 EastAisa kaggler들의 연봉</b>",title_font_size=35)
 fig.show()
 ```
-![](/images/mykaggle4/29.PNG)
+![](/images/mykaggle4/29.png)
 <br>
 
 
@@ -710,7 +724,7 @@ fig.update_layout(title_text="<b>21년 World kaggler들이 사용하는 언어</
 
 fig.show()
 ```
-![](/images/mykaggle4/30.PNG)
+![](/images/mykaggle4/30.png)
 <br>
 
 

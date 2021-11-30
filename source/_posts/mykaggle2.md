@@ -1,11 +1,11 @@
 ---
-title: Kaggle Competition 준비하기(2)
+title: Kaggle Competition(2)
 date: 2021-11-15
 tags: kaggle, plotly, pie, bar
 toc: true
 thumbnail: images/mykaggle2/6.png
 categories: 
-- my kaggle
+- kaggle 필사
 widgets: null
 ---
 

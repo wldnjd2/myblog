@@ -1,11 +1,11 @@
 ---
-title: Kaggle(3-4) treemap
+title: treemap
 date: 2021-11-09
 tags: kaggle, plotly
 toc: true
 thumbnail: /images/0307_3-4/2.PNG
 categories: 
-- kaggle
+- kaggle 필사
 widgets: null
 ---
 ```python

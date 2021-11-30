@@ -1,11 +1,11 @@
 ---
-title: Kaggle(1-3) 산점도 막대그래프(Scatter)
+title: 산점도 막대그래프(Scatter)
 date: 2021-11-07
 tags: kaggle, plotly
 toc: true
 thumbnail: images/0303_1-3/10.PNG
 categories: 
-- kaggle
+- kaggle 필사
 widgets: null
 ---
 

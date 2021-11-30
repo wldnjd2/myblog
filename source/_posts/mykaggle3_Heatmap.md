@@ -1,13 +1,17 @@
 
 ---
-title: Kaggle Competition Heatmap(3)
+title: Kaggle Competition(3)
 date: 2021-11-16
 tags: kaggle, plotly
 toc: true
 categories: 
-- my kaggle
+- kaggle 필사
 widgets: null
 ---
+
+### 
+
+
 ### **라이브러리 불러오기 & 캐글 데이터 불러오기**
 ---
 
@@ -221,7 +225,7 @@ fig['data'][0]['showscale'] = True
 fig.show()
 
 ```
-![](/images/mykaggle3/7.PNG)
+![](/images/mykaggle3/7.png)
 <br>
 
 

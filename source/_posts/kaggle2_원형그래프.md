@@ -1,11 +1,11 @@
 ---
-title: Kaggle(1-2) 원형그래프(Pie)
+title: 원형그래프(Pie)
 date: 2021-11-07
 tags: kaggle, plotly
 toc: true
 thumbnail: /images/0302_1-2/6.PNG
 categories: 
-- kaggle
+- kaggle 필사
 widgets: null
 ---
 

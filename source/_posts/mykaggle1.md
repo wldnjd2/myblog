@@ -1,11 +1,11 @@
 ---
-title: Kaggle Competition 준비하기(1)
+title: Kaggle Competition(1)
 date: 2021-11-14
 tags: kaggle, plotly
 toc: true
 thumbnail: images/mykaggle1/11.PNG
 categories: 
-- my kaggle
+- kaggle 필사
 widgets: null
 ---
 ### **데이터 불러오기**
@@ -111,7 +111,7 @@ df21['region'].head()
 ![](/images/mykaggle1/4.PNG)
 ### **데이터 Grouping**
 ---
-윤화님이 정리해주신 데이터~~>.<
+
 - **연도별 EastAsia 국가 정리**
 EastAsia17
 EastAsia18
