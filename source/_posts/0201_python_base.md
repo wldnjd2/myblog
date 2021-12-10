@@ -1,10 +1,10 @@
 ---
-title: Python 기초문법 (1)
+title: Python 기초문법
 date: 2021-11-01 
 tags: python, coding, study
-categories: 
-- study
-- 파이썬
+categories:
+  - 파이썬
+  - Python 기초
 ---
 <br>
 

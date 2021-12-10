@@ -4,7 +4,9 @@ title: Pycharm 가상환경 설정 & 라이브러리 설치
 tags: python, requirements.txt
 toc: true
 categories:
-  - Python Basic
+ - 파이썬
+ - Python Setting
+widgets: null
 ---
 
 ### **Pycharm 가상환경 설정 방법**

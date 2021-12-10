@@ -1,11 +1,11 @@
 ---
-title: 깃허브 블로그 만들기(1)
+title: 깃허브 블로그 만들기 (with Hexo)
 date: 2021-10-28 13:08:34
 tags: Node.js
 tog: true
 categories: 
-- blog
-- hexo
+- Blog setting
+- Hexo
 ---
 
 ### 깃허브 블로그 만드는 법을 소개합니다.

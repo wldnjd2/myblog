@@ -4,7 +4,8 @@ date: 2021-11-28
 tags: kaggle, plotly
 
 categories: 
-- kaggle Competition
+- Project
+- Kaggle Competition
 toc: true
 ---
 

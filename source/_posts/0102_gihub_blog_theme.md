@@ -1,10 +1,10 @@
 ---
-title: hexo icarus 테마 설정(2)
+title: hexo icarus 테마 설정
 date: 2021-10-28 13:08:34
 tags: github, hexo
 categories: 
-- blog
-- hexo
+- Blog setting
+- Hexo
 ---
 
 ## **1. hexo 블로그 테마 변경**

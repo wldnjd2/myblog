@@ -1,7 +1,8 @@
 ---
 title: Plotly를 이용해 다양한 bar 그래프 그리기
 categories:
-  - Python Plotly
+- 파이썬
+- Python Plotly
 date: 2021-11-28
 tags: plotly, bar graph, bar
 thumbnail: /images/plotlybar/newplot.png

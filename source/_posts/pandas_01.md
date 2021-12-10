@@ -2,7 +2,8 @@
 date: 2021-12-03
 title: 내가 사용한 Pandas 메서드
 tags: python, pandas
-categories: 
+categories:
+ - 파이썬
  - Python Pandas
 toc: true
 ---

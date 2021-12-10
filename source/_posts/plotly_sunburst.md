@@ -1,6 +1,7 @@
 ---
 title: Plotly를 이용해 Sunburst 그래프 그리기
 categories:
+- 파이썬
 - Python Plotly
 date: 2021-11-28
 tags: plotly, pie graph, pie, sunburst

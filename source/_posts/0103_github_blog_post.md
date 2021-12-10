@@ -1,11 +1,11 @@
 ---
-title: hexo로 포스팅하기 & 이미지 추가하기(3)
+title: hexo로 포스팅하기 & 이미지 추가하기
 date: 2021-10-29
 tags: github, hexo
 toc: true
 categories: 
-- blog
-- hexo
+- Blog setting
+- Hexo
 ---
    
 ### **post 만들기**

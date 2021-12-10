@@ -1,10 +1,10 @@
 ---
 title: Dash를 활용한 대시보드 만들기
 date: 2021-12-01
-tags: python, Heroku, Dashboard,
-
+tags: python, Heroku, Dashboard
 categories: 
-- Python web programming
+- 파이썬
+- Python heroku
 toc: true
 ---
 

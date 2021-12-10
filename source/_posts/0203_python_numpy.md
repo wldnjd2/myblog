@@ -1,11 +1,11 @@
 ---
-title: Python Numpy (3)
+title: Python Numpy
 date: 2021-11-02
 tags: markdown, python, pycharm, numpy
 toc: true
-categories: 
-- study
-- 파이썬
+categories:
+  - 파이썬
+  - Python 기초
 ---
 <br>
 

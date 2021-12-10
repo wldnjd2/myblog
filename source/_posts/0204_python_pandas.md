@@ -1,11 +1,11 @@
 ---
-title: Python Pandas (4)
+title: Python Pandas란
 date: 2021-11-02
 tags: markdown, python, pycharm, pandas
 toc: true
-categories: 
-- study
-- 파이썬
+categories:
+  - 파이썬
+  - Python Pandas
 ---
 <br>
 

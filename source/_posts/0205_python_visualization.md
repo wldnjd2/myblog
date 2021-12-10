@@ -1,11 +1,11 @@
 ---
-title: Python 데이터 시각화 (5)
+title: Python 데이터 시각화
 date: 2021-11-03
 tags: markdown, python, pycharm, visualization
 toc: true
-categories: 
-- study
+categories:
 - 파이썬
+- Python Visualization
 ---
 <br>
 <br>

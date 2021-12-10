@@ -1,11 +1,11 @@
 ---
-title: Google colab 연동 (markdown 파일 생성, GitHub 저장) (2)
+title: Google colab 연동 (markdown 파일 생성, GitHub 저장)
 date: 2021-11-01
 tags: markdown, python, pycharm
 toc: true
-categories: 
-- study
-- 파이썬
+categories:
+  - 파이썬
+  - Python Setting
 ---
 <br>
 

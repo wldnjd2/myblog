@@ -1,10 +1,10 @@
 ---
-title: 머신러닝 Decision Tree(1)
+title: Decision Tree
 date: 2021-11-04
 toc : true
 tags: machine learning, decision tree
 categories: 
-- machine learning
+- 머신러닝
 ---
 <br>
 
