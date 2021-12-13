@@ -80,7 +80,9 @@ while a < 10:
   if a == 10:<br>
     pass
 ```
-          
+    
+<br>
+
 아래는 커피 주문 자판기를 구현한것이다
 ```python
 coffee = 100
@@ -98,6 +100,8 @@ while True:
     print("재고가 부족합니다. 다시 입력하세요.")  
 ```
       
+<br>
+
  ```python
 customer = "손님"
 i = 5
@@ -114,6 +118,8 @@ while i >= 1:
     손님, 커피가 준비되었습니다. 1번 남았어요.
     커피는 폐기처분 되었습니다
 
+<br>
+
 ### **for문의 기본구조**
 > for 변수 in 리스트(또는 튜플, 문자열):
 >  수행할 문장1
@@ -128,6 +134,7 @@ for i in test:
     b
     c
 
+<br>
 
 ```python
 score = [100, 90, 60, 50, 40, 30]
@@ -147,8 +154,53 @@ for i in score:
         6번 학생은 불합격입니다.
 <br>
 
-### ****   
+```python
+a = [(1,2), (3,4), (5,6)]
+for (first, last) in a:
+    print(first + last)
+```
+    3
+    7
+    11
+
+<br>
+
+### **for문에서 range 함수**
+- range
+숫자 리스트를 자동으로 만들어주는 함수
+
+아래는 0부터 10미만의 숫자를 포함하는 range 객체를 만들어준다
+```python
+a = range(10)
+a
+>> range(0, 10)
+```
+<br>
+
+이를 for문에서 사용해보자
+
+```python
+    for i in range(1, 6):  #1,2,3,4,5
+    print(i)
+
+```
+    1
+    2
+    3
+    4
+    5
+
 <br>       
+len(marks)는 5, number 변수에는 0에서 4까지 숫자가 대입될 것이다.
+marks[number]는 차례로 90, 25, 67, 45, 80 값을 가지게 된다
+
+```python
+marks = [90, 25, 67, 45, 80]
+for number in range(len(marks)):
+    if marks[number] < 60: 
+        continue
+    print("%d번 학생 축하합니다. 합격입니다." % (number+1))
+```
 
 ### ****   
 <br>       
