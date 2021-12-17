@@ -194,6 +194,35 @@ class AttackUnit(Unit):   #상속
 ```
 <br>
 
+하지만 다중 상속에서는 문제가 발생한다.
+                          
+아래 예제에서는 FlyableUnit이 Unit과 Flyable을 다중 상속받는다
+이때 아래와 같이 super()를 통해 상속을 해주게 되면
+"class FlyableUnit(**Flyable**, Unit):"   Flyable을 먼저 선언해줬기 때문에   
+Flyable 생성자라고 실행 결과가 나오게 된다 (Unit 생성자가 호출이 안됨)
+
+따라서   Unit.__init__(self), Flyable.__init__(self) 로 상속을 해줄 수 있다.
+
+
+```python
+class Unit:
+    def __init__(self):
+        print("Unit 생성자")
+    
+class Flyable:
+    def __init__(self):
+        print("Flyable 생성자")
+        
+class FlyableUnit(Flyable, Unit):
+    def __init__(self):
+        #super().__init__()
+        Unit.__init__(self)
+        Flyable.__init__(self)
+        
+dropship = FlyableUnit()
+```
+
+
 ### **Ref**  
 [나도코딩](https://www.youtube.com/watch?v=kWiCuklohdY)
 [점프투파이썬](https://wikidocs.net/1015)
