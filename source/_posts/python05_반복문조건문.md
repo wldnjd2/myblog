@@ -2,6 +2,7 @@
 date: 2021-12-07
 title: 파이썬 조건문과 반복문 (if, while, for)
 tags: python
+categories:
   - 파이썬
   - Python 기초
 toc: true

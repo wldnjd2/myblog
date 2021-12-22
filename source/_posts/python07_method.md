@@ -2,6 +2,7 @@
 date: 2021-12-08
 title: 파이썬 Method
 tags: python
+categories:
   - 파이썬
   - Python 기초
 toc: true

@@ -2,10 +2,13 @@
 date: 2021-12-09
 title: 파이썬 Class
 tags: python
+categories:
   - 파이썬
   - Python 기초
 toc: true
 ---
+  
+
 ### **클래스와 객체**
 ---
 클래스는 붕어빵 틀에 비유를 할 수 있다. 
