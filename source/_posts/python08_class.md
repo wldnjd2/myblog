@@ -8,7 +8,7 @@ categories:
 toc: true
 ---
   
-
+gd
 
 ### **클래스와 객체**
 ---
