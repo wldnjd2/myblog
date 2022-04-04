@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Python Pandas란 - 부엉아지금잠이오니</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kimjeewon"><meta name="msapplication-TileImage" content="images/곰돌.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kimjeewon"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Pandas란 파이썬 언어로 작성된 데이터를 분석 및 조작하기 위한 소프트웨어 라이브러리이다.팬더스는 R에서 사용되던 data.frame 구조를 본뜬 DataFrame이라는 구조를 사용하기 때문에,R의 data.frame에서 사용하던 기능 상당수를 무리없이 사용할 수 있도록 만들었다.   사용하는 이유데이터 전처리 하기 위함index 1개와 colum"><meta property="og:type" content="blog"><meta property="og:title" content="Python Pandas란"><meta property="og:url" content="https://wldnjd2.github.io/2021/11/02/0204-python-pandas/"><meta property="og:site_name" content="부엉아지금잠이오니"><meta property="og:description" content="Pandas란 파이썬 언어로 작성된 데이터를 분석 및 조작하기 위한 소프트웨어 라이브러리이다.팬더스는 R에서 사용되던 data.frame 구조를 본뜬 DataFrame이라는 구조를 사용하기 때문에,R의 data.frame에서 사용하던 기능 상당수를 무리없이 사용할 수 있도록 만들었다.   사용하는 이유데이터 전처리 하기 위함index 1개와 colum"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://wldnjd2.github.io/img/og_image.png"><meta property="article:published_time" content="2021-11-01T15:00:00.000Z"><meta property="article:modified_time" content="2022-01-03T12:20:08.046Z"><meta property="article:author" content="wldnjd2"><meta property="article:tag" content="markdown, python, pycharm, pandas"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://wldnjd2.github.io/2021/11/02/0204-python-pandas/"},"headline":"Python Pandas란","image":["https://wldnjd2.github.io/img/og_image.png"],"datePublished":"2021-11-01T15:00:00.000Z","dateModified":"2022-01-03T12:20:08.046Z","author":{"@type":"Person","name":"wldnjd2"},"publisher":{"@type":"Organization","name":"부엉아지금잠이오니","logo":{"@type":"ImageObject","url":"https://wldnjd2.github.io/2021/11/02/0204-python-pandas/images/flower.jpg"}},"description":"Pandas란 파이썬 언어로 작성된 데이터를 분석 및 조작하기 위한 소프트웨어 라이브러리이다.팬더스는 R에서 사용되던 data.frame 구조를 본뜬 DataFrame이라는 구조를 사용하기 때문에,R의 data.frame에서 사용하던 기능 상당수를 무리없이 사용할 수 있도록 만들었다.   사용하는 이유데이터 전처리 하기 위함index 1개와 colum"}</script><link rel="canonical" href="https://wldnjd2.github.io/2021/11/02/0204-python-pandas/"><link rel="icon" href="/images/%EA%B3%B0%EB%8F%8C.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/images/flower.jpg" alt="부엉아지금잠이오니" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-11-01T15:00:00.000Z" title="11/2/2021, 12:00:00 AM">2021-11-02</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-01-03T12:20:08.046Z" title="1/3/2022, 9:20:08 PM">2022-01-03</time></span><span class="level-item"><a class="link-muted" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/">파이썬</a><span> / </span><a class="link-muted" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/Python-Pandas/">Python Pandas</a></span><span class="level-item">8 minutes read (About 1133 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">Python Pandas란</h1><div class="content"><br>
+
+
+<h3 id="Pandas란"><a href="#Pandas란" class="headerlink" title="Pandas란"></a><strong>Pandas란</strong></h3><hr>
+<p>파이썬 언어로 작성된 데이터를 분석 및 조작하기 위한 소프트웨어 라이브러리이다.<br>팬더스는 R에서 사용되던 data.frame 구조를 본뜬 DataFrame이라는 구조를 사용하기 때문에,<br>R의 data.frame에서 사용하던 기능 상당수를 무리없이 사용할 수 있도록 만들었다. </p>
+<ul>
+<li>사용하는 이유<br>데이터 전처리 하기 위함<br>index 1개와 column 1개 —&gt; series<br>index 1개와 column 2개 —&gt; dataframe<br></li>
+</ul>
+<p>Pandas 참고 사이트<br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/index.html">https://pandas.pydata.org/docs/reference/index.html</a><br><br></p>
+<h3 id="라이브러리-불러오기"><a href="#라이브러리-불러오기" class="headerlink" title="라이브러리 불러오기"></a><strong>라이브러리 불러오기</strong></h3><hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="built_in">print</span>(pd.__version__)</span><br></pre></td></tr></table></figure>
+
+<pre><code>1.1.5
+</code></pre>
+<br>
+
+<h3 id="테스트"><a href="#테스트" class="headerlink" title="테스트"></a><strong>테스트</strong></h3><hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;col1&#x27;</span>: [<span class="number">1</span>,<span class="number">2</span>], <span class="string">&#x27;col2&#x27;</span>: [<span class="number">3</span>,<span class="number">4</span>]&#125;)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(df))</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</code></pre>
+<br>
+
+<h3 id="구글-드라이브-연동-colab이랑-연결"><a href="#구글-드라이브-연동-colab이랑-연결" class="headerlink" title="구글 드라이브 연동 (colab이랑 연결)"></a><strong>구글 드라이브 연동 (colab이랑 연결)</strong></h3><hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> drive</span><br><span class="line">drive.mount(<span class="string">&#x27;/content/drive&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Mounted at /content/drive
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DATA_PATH = <span class="string">&quot;경로를 입력하시기를 바랍니다.&quot;</span></span><br><span class="line">DATA_PATH = <span class="string">&#x27;/content/drive/MyDrive/Colab Notebooks/lectures_211101/PART_I_Intro/data&#x27;</span></span><br><span class="line">lemonade = pd.read_csv(DATA_PATH + <span class="string">&#x27;/Lemonade2016.csv&#x27;</span>)</span><br><span class="line">lemonade.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 32 entries, 0 to 31
+Data columns (total 7 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   Date         31 non-null     object 
+ 1   Location     32 non-null     object 
+ 2   Lemon        32 non-null     int64  
+ 3   Orange       32 non-null     int64  
+ 4   Temperature  32 non-null     int64  
+ 5   Leaflets     31 non-null     float64
+ 6   Price        32 non-null     float64
+dtypes: float64(2), int64(3), object(2)
+memory usage: 1.9+ KB
+</code></pre>
+<h3 id="데이터-둘러보기"><a href="#데이터-둘러보기" class="headerlink" title="데이터 둘러보기"></a><strong>데이터 둘러보기</strong></h3><hr>
+<p>(lemonade 파일은 가게 포스기라고 생각하자)</p>
+<p><strong>- head</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#상위 5개 행 출력</span></span><br><span class="line"><span class="comment">#0부터 4까지 행 출력</span></span><br><span class="line">lemonade.head(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+      <th>Sold</th>
+      <th>Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7/1/2016</td>
+      <td>Park</td>
+      <td>97</td>
+      <td>67</td>
+      <td>70</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>164</td>
+      <td>41.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7/2/2016</td>
+      <td>Park</td>
+      <td>98</td>
+      <td>67</td>
+      <td>72</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>165</td>
+      <td>41.25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7/3/2016</td>
+      <td>Park</td>
+      <td>110</td>
+      <td>77</td>
+      <td>71</td>
+      <td>104.0</td>
+      <td>0.25</td>
+      <td>187</td>
+      <td>46.75</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7/4/2016</td>
+      <td>Beach</td>
+      <td>134</td>
+      <td>99</td>
+      <td>76</td>
+      <td>98.0</td>
+      <td>0.25</td>
+      <td>233</td>
+      <td>58.25</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7/5/2016</td>
+      <td>Beach</td>
+      <td>159</td>
+      <td>118</td>
+      <td>78</td>
+      <td>135.0</td>
+      <td>0.25</td>
+      <td>277</td>
+      <td>69.25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<p><strong>- tail</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#끝에 3개 행 출력</span></span><br><span class="line">lemonade.tail(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>29</th>
+      <td>7/29/2016</td>
+      <td>Park</td>
+      <td>100</td>
+      <td>66</td>
+      <td>81</td>
+      <td>95.0</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>7/30/2016</td>
+      <td>Beach</td>
+      <td>88</td>
+      <td>57</td>
+      <td>82</td>
+      <td>81.0</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>7/31/2016</td>
+      <td>Beach</td>
+      <td>76</td>
+      <td>47</td>
+      <td>82</td>
+      <td>68.0</td>
+      <td>0.35</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<p><strong>- info() 메소드</strong><br>데이터에 대한 전반적인 정보<br>df를 구성하는 행과 열의 크기, 컬럼명, 컬럼을 구성하는 자료형을 출력</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade.info())</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 32 entries, 0 to 31
+Data columns (total 7 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   Date         31 non-null     object 
+ 1   Location     32 non-null     object 
+ 2   Lemon        32 non-null     int64  
+ 3   Orange       32 non-null     int64  
+ 4   Temperature  32 non-null     int64  
+ 5   Leaflets     31 non-null     float64
+ 6   Price        32 non-null     float64
+dtypes: float64(2), int64(3), object(2)
+memory usage: 1.9+ KB
+None
+</code></pre>
+<br> 
+
+<p><strong>- describe() 메소드</strong><br>다양한 통계량을 요약해주는 메소드</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lemonade.describe()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>32.000000</td>
+      <td>32.000000</td>
+      <td>32.000000</td>
+      <td>31.000000</td>
+      <td>32.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>116.156250</td>
+      <td>80.000000</td>
+      <td>78.968750</td>
+      <td>108.548387</td>
+      <td>0.354687</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>25.823357</td>
+      <td>21.863211</td>
+      <td>4.067847</td>
+      <td>20.117718</td>
+      <td>0.113137</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>71.000000</td>
+      <td>42.000000</td>
+      <td>70.000000</td>
+      <td>68.000000</td>
+      <td>0.250000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>98.000000</td>
+      <td>66.750000</td>
+      <td>77.000000</td>
+      <td>90.000000</td>
+      <td>0.250000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>113.500000</td>
+      <td>76.500000</td>
+      <td>80.500000</td>
+      <td>108.000000</td>
+      <td>0.350000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>131.750000</td>
+      <td>95.000000</td>
+      <td>82.000000</td>
+      <td>124.000000</td>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>176.000000</td>
+      <td>129.000000</td>
+      <td>84.000000</td>
+      <td>158.000000</td>
+      <td>0.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<p><strong>- .value_counts() 메소드</strong><br>개별 컬럼 내에 각각의 값이 나온 횟수를 셀 수 있다</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lemonade[<span class="string">&#x27;Location&#x27;</span>].value_counts()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>Beach    17
+Park     15
+Name: Location, dtype: int64
+</code></pre>
+<br> 
+
+<h3 id="데이터-다뤄보기"><a href="#데이터-다뤄보기" class="headerlink" title="데이터 다뤄보기"></a><strong>데이터 다뤄보기</strong></h3><hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Sold라는 컬럼을 만들고 값을 0으로 지정</span></span><br><span class="line">lemonade[<span class="string">&#x27;Sold&#x27;</span>] = <span class="number">0</span></span><br><span class="line"><span class="built_in">print</span>(lemonade.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold
+0  7/1/2016     Park     97      67           70      90.0   0.25     0
+1  7/2/2016     Park     98      67           72      90.0   0.25     0
+2  7/3/2016     Park    110      77           71     104.0   0.25     0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lemonade[<span class="string">&#x27;Sold&#x27;</span>] = lemonade[<span class="string">&#x27;Lemon&#x27;</span>] + lemonade[<span class="string">&#x27;Orange&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(lemonade.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold
+0  7/1/2016     Park     97      67           70      90.0   0.25   164
+1  7/2/2016     Park     98      67           72      90.0   0.25   165
+2  7/3/2016     Park    110      77           71     104.0   0.25   187
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lemonade[<span class="string">&#x27;Revenue&#x27;</span>] = lemonade[<span class="string">&#x27;Price&#x27;</span>]*lemonade[<span class="string">&#x27;Sold&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(lemonade.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  ...  Leaflets  Price  Sold  Revenue
+0  7/1/2016     Park     97      67  ...      90.0   0.25   164    41.00
+1  7/2/2016     Park     98      67  ...      90.0   0.25   165    41.25
+2  7/3/2016     Park    110      77  ...     104.0   0.25   187    46.75
+
+[3 rows x 9 columns]
+</code></pre>
+<br>
+
+<dl><dt><strong>- Out으로 출력하는 최대 칼럼의 개수</strong></dt><dd>display.max_columns</dd></dl><dl><dt><strong>- 옵션 설정</strong></dt><dd>pd.set_option()</dd></dl><dl><dt><strong>- pd.set_option(‘display.max_columns’,None)</strong></dt><dd>열 전체를 출력한다는 의미</dd></dl><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pd.set_option(<span class="string">&#x27;display.max_columns&#x27;</span>,<span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line">lemonade[<span class="string">&#x27;Revenue&#x27;</span>] = lemonade[<span class="string">&#x27;Price&#x27;</span>] * lemonade[<span class="string">&#x27;Sold&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(lemonade.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold  \
+0  7/1/2016     Park     97      67           70      90.0   0.25   164   
+1  7/2/2016     Park     98      67           72      90.0   0.25   165   
+2  7/3/2016     Park    110      77           71     104.0   0.25   187   
+
+   Revenue  
+0    41.00  
+1    41.25  
+2    46.75  
+</code></pre>
+<br> 
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pd.set_option(<span class="string">&#x27;display.max_columns&#x27;</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">lemonade[<span class="string">&#x27;Revenue&#x27;</span>]= lemonade[<span class="string">&#x27;Price&#x27;</span>] * lemonade[<span class="string">&#x27;Sold&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(lemonade.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  ...  Leaflets  Price  Sold  Revenue
+0  7/1/2016     Park     97      67  ...      90.0   0.25   164    41.00
+1  7/2/2016     Park     98      67  ...      90.0   0.25   165    41.25
+2  7/3/2016     Park    110      77  ...     104.0   0.25   187    46.75
+
+[3 rows x 9 columns]
+</code></pre>
+<br> 
+
+<p>axis=1은 열방향으로 동작 -&gt; columns<br>axis=0은 행방향으로 동작 -&gt; index</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Sold column(열)을 삭제</span></span><br><span class="line">lemonade_column_drop = lemonade.drop(<span class="string">&#x27;Sold&#x27;</span>, axis=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(lemonade_column_drop.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Revenue
+0  7/1/2016     Park     97      67           70      90.0   0.25    41.00
+1  7/2/2016     Park     98      67           72      90.0   0.25    41.25
+2  7/3/2016     Park    110      77           71     104.0   0.25    46.75
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#0번 행 삭제</span></span><br><span class="line">lemonade_row_drop = lemonade_column_drop.drop(<span class="number">0</span>, axis=<span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(lemonade_row_drop.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Revenue
+1  7/2/2016     Park     98      67           72      90.0   0.25    41.25
+2  7/3/2016     Park    110      77           71     104.0   0.25    46.75
+3  7/4/2016    Beach    134      99           76      98.0   0.25    58.25
+</code></pre>
+<br>
+
+<h3 id="데이터-인덱싱"><a href="#데이터-인덱싱" class="headerlink" title="데이터 인덱싱"></a><strong>데이터 인덱싱</strong></h3><hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0번부터 4번까지 행 출력</span></span><br><span class="line"><span class="built_in">print</span>(lemonade[<span class="number">0</span>:<span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold  \
+0  7/1/2016     Park     97      67           70      90.0   0.25   164   
+1  7/2/2016     Park     98      67           72      90.0   0.25   165   
+2  7/3/2016     Park    110      77           71     104.0   0.25   187   
+3  7/4/2016    Beach    134      99           76      98.0   0.25   233   
+4  7/5/2016    Beach    159     118           78     135.0   0.25   277   
+
+   Revenue  
+0    41.00  
+1    41.25  
+2    46.75  
+3    58.25  
+4    69.25  
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lemonade[<span class="string">&#x27;Location&#x27;</span>] == <span class="string">&#x27;Beach&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0     False
+1     False
+2     False
+3      True
+4      True
+5      True
+6      True
+7      True
+8      True
+9      True
+10     True
+11     True
+12     True
+13     True
+14     True
+15     True
+16     True
+17     True
+18    False
+19    False
+20    False
+21    False
+22    False
+23    False
+24    False
+25    False
+26    False
+27    False
+28    False
+29    False
+30     True
+31     True
+Name: Location, dtype: bool
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#true값만 반환</span></span><br><span class="line"><span class="built_in">print</span>(lemonade[lemonade[<span class="string">&#x27;Location&#x27;</span>] == <span class="string">&#x27;Beach&#x27;</span>].head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold  \
+3  7/4/2016    Beach    134      99           76      98.0   0.25   233   
+4  7/5/2016    Beach    159     118           78     135.0   0.25   277   
+5  7/6/2016    Beach    103      69           82      90.0   0.25   172   
+
+   Revenue  
+3    58.25  
+4    69.25  
+5    43.00  
+</code></pre>
+<br>
+iloc (integer-location based): 행 번호로 선택하는 방법 <br>
+loc (Labels): 조건 표현으로 선택함 <br>
+<br>
+
+<p>ex) <br><br>df.loc[[행],[열]]<br>df.iloc[[행],[열]]<br>행, 열 조건은 똑같다</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade.iloc[<span class="number">0</span>:<span class="number">3</span>, <span class="number">0</span>:<span class="number">2</span>])    <span class="comment">#첫 3개 행과 0,1,2번째 행 출력하기</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location
+0  7/1/2016     Park
+1  7/2/2016     Park
+2  7/3/2016     Park
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade.loc[<span class="number">0</span>:<span class="number">2</span>, [<span class="string">&#x27;Date&#x27;</span>,<span class="string">&#x27;Location&#x27;</span>]])   <span class="comment">#열 </span></span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location
+0  7/1/2016     Park
+1  7/2/2016     Park
+2  7/3/2016     Park
+</code></pre>
+<br>
+
+<h3 id="기본-데이터-전처리"><a href="#기본-데이터-전처리" class="headerlink" title="기본 데이터 전처리"></a><strong>기본 데이터 전처리</strong></h3><hr>
+<p><strong>- sort_values()</strong><br>by 옵션에 기준으로 데이터를 정렬</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade.sort_values(by=[<span class="string">&#x27;Temperature&#x27;</span>]).head(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>         Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold
+0    7/1/2016     Park     97      67           70      90.0   0.25     0
+20  7/20/2016     Park     71      42           70       NaN   0.50     0
+2    7/3/2016     Park    110      77           71     104.0   0.25     0
+1    7/2/2016     Park     98      67           72      90.0   0.25     0
+16  7/16/2016    Beach     81      50           74      90.0   0.50     0
+</code></pre>
+<br>
+ 
+<p><strong>- Groupby()</strong><br>전체 데이터를 그룹별로 분할하여<br>mean(), sum(), count()와 같은 메소드를 사용해 연산하고<br>연산 결과를 다시 합치는 과정을 거친다</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade.groupby(by=<span class="string">&#x27;Location&#x27;</span>).count())</span><br></pre></td></tr></table></figure>
+
+<pre><code>          Date  Lemon  Orange  Temperature  Leaflets  Price  Sold
+Location                                                         
+Beach       16     17      17           17        17     17    17
+Park        15     15      15           15        14     15    15
+</code></pre>
+<br>
+<br>
+<br></div><div class="article-licensing box"><div class="licensing-title"><p>Python Pandas란</p><p><a href="https://wldnjd2.github.io/2021/11/02/0204-python-pandas/">https://wldnjd2.github.io/2021/11/02/0204-python-pandas/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>wldnjd2</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-11-02</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2022-01-03</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/markdown-python-pycharm-pandas/">markdown, python, pycharm, pandas</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/11/02/0203-python-numpy/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Python Numpy</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/11/01/0201-python-base/"><span class="level-item">Python 기초문법</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://wldnjd2.github.io/2021/11/02/0204-python-pandas/';
+            this.page.identifier = '2021/11/02/0204-python-pandas/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'wldnjd2' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image mx-auto mb-2"><img class="avatar is-rounded" src="/images/me.jpg" alt="wldnjd2"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">wldnjd2</p><p class="is-size-6 is-block">노력이 나를 만든다</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">50</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">17</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">30</p></a></div></div></nav><div class="level"><a class="level-item button is-info is-outlined is-rounded" href="/" target="_self" rel="noopener">Home</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/wldnjd2"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="instagram" href="https://www.instagram.com/wldnjd2"><i class="fab fa-instagram"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Pandas란"><span class="level-left"><span class="level-item">1</span><span class="level-item">Pandas란</span></span></a></li><li><a class="level is-mobile" href="#라이브러리-불러오기"><span class="level-left"><span class="level-item">2</span><span class="level-item">라이브러리 불러오기</span></span></a></li><li><a class="level is-mobile" href="#테스트"><span class="level-left"><span class="level-item">3</span><span class="level-item">테스트</span></span></a></li><li><a class="level is-mobile" href="#구글-드라이브-연동-colab이랑-연결"><span class="level-left"><span class="level-item">4</span><span class="level-item">구글 드라이브 연동 (colab이랑 연결)</span></span></a></li><li><a class="level is-mobile" href="#데이터-둘러보기"><span class="level-left"><span class="level-item">5</span><span class="level-item">데이터 둘러보기</span></span></a></li><li><a class="level is-mobile" href="#데이터-다뤄보기"><span class="level-left"><span class="level-item">6</span><span class="level-item">데이터 다뤄보기</span></span></a></li><li><a class="level is-mobile" href="#데이터-인덱싱"><span class="level-left"><span class="level-item">7</span><span class="level-item">데이터 인덱싱</span></span></a></li><li><a class="level is-mobile" href="#기본-데이터-전처리"><span class="level-left"><span class="level-item">8</span><span class="level-item">기본 데이터 전처리</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Blog-setting/"><span class="level-start"><span class="level-item">Blog setting</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/Blog-setting/Hexo/"><span class="level-start"><span class="level-item">Hexo</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/First-Post/"><span class="level-start"><span class="level-item">First Post</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Project/"><span class="level-start"><span class="level-item">Project</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Project/Kaggle-Competition/"><span class="level-start"><span class="level-item">Kaggle Competition</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/boostcourse-%EB%B0%B1%EC%97%94%EB%93%9C/"><span class="level-start"><span class="level-item">boostcourse 백엔드</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/kaggle-%ED%95%84%EC%82%AC/"><span class="level-start"><span class="level-item">kaggle 필사</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/%EB%A7%A5%EB%B6%81/"><span class="level-start"><span class="level-item">맥북</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">머신러닝</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%EB%B6%80%EC%8A%A4%ED%8A%B8%EC%BD%94%EC%8A%A4-%EB%B0%B1%EC%97%94%EB%93%9C/"><span class="level-start"><span class="level-item">부스트코스 백엔드</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"><span class="level-start"><span class="level-item">파이썬</span></span><span class="level-end"><span class="level-item tag">20</span></span></a><ul><li><a class="level is-mobile" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/Python-Pandas/"><span class="level-start"><span class="level-item">Python Pandas</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/Python-Plotly/"><span class="level-start"><span class="level-item">Python Plotly</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/Python-Setting/"><span class="level-start"><span class="level-item">Python Setting</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/Python-Visualization/"><span class="level-start"><span class="level-item">Python Visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/Python-heroku/"><span class="level-start"><span class="level-item">Python heroku</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/Python-%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">Python 기초</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-02T15:00:00.000Z">2022-01-03</time></p><p class="title"><a href="/2022/01/03/boostcourse-version/">설치 프로그램 버전 | 부스트코스 백엔드</a></p><p class="categories"><a href="/categories/boostcourse-%EB%B0%B1%EC%97%94%EB%93%9C/">boostcourse 백엔드</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-02T15:00:00.000Z">2022-01-03</time></p><p class="title"><a href="/2022/01/03/boostcourse-01-db/">데이터베이스 | 부스트코스 백엔드 01</a></p><p class="categories"><a href="/categories/boostcourse-%EB%B0%B1%EC%97%94%EB%93%9C/">boostcourse 백엔드</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-02T15:00:00.000Z">2022-01-03</time></p><p class="title"><a href="/2022/01/03/boostcourse-02-maven/">Maven | 부스트코스 백엔드 02</a></p><p class="categories"><a href="/categories/boostcourse-%EB%B0%B1%EC%97%94%EB%93%9C/">boostcourse 백엔드</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-02T15:00:00.000Z">2022-01-03</time></p><p class="title"><a href="/2022/01/03/boostcourse-04-web/">WEB | 부스트코스 백엔드 04</a></p><p class="categories"><a href="/categories/boostcourse-%EB%B0%B1%EC%97%94%EB%93%9C/">boostcourse 백엔드</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-02T15:00:00.000Z">2022-01-03</time></p><p class="title"><a href="/2022/01/03/boostcourse-03-jdbc/">JDBC | 부스트코스 백엔드03</a></p><p class="categories"><a href="/categories/boostcourse-%EB%B0%B1%EC%97%94%EB%93%9C/">boostcourse 백엔드</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/images/flower.jpg" alt="부엉아지금잠이오니" height="28"></a><p class="is-size-7"><span>&copy; 2022 wldnjd2</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
